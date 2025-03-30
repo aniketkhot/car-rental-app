@@ -112,7 +112,7 @@ function CustomerList() {
               <td>{cust.address}</td>
               <td><button
                 className="btn btn-warning btn-sm me-2"
-                onClick={() => setEditingCustomer(cust)} // 👈 Open modal
+                onClick={() => setEditingCustomer(cust)}
               >
                 Edit
               </button>

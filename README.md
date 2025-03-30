@@ -1,68 +1,120 @@
-# **Assignment: Full-Stack CRUD Application Development with DevOps Practices**
 
-## **Objective**
+# 🚗 Car Rental System
 
-You have been provided with a starter project that includes user authentication using  **Node.js, React.js, and MongoDB**. Your task is to extend this application by implementing **CRUD (Create, Read, Update, Delete) operations** for a real-world application of your choice, while following industry best practices such as:
+A full-stack MERN (MongoDB, Express.js, React.js, Node.js) web application that allows authenticated users to manage car rentals through CRUD operations on Cars, Customers, and Rentals. Built for IFN636 - Software Life Cycle Management at QUT.
 
-* **Project Management with JIRA**
-* **Requirement Diagram using SysML**
-* **Version Control using GitHub**
-* **CI/CD Integration for Automated Deployment**
+## 🔧 Features
 
-## **Requirements**
+- ✅ User Registration & Login (JWT-based)
+- ✅ Authentication & Protected Routes
+- ✅ CRUD Operations for:
+  - Cars
+  - Customers
+  - Rentals (with start date, end date, price/day)
+- ✅ Bootstrap UI with modals for editing
+- ✅ Axios for seamless frontend-backend communication
+- ✅ MongoDB Atlas cloud database
+- ✅ GitHub Actions CI/CD with AWS EC2 deployment
+- ✅ Project tracking with Jira and version control via Git branching
 
-### **1. Choose a Real-World Application**
+## 🛠️ Tech Stack
 
-Select a meaningful use case for your CRUD operations. We will provide the list, you have to select it.
+| Layer        | Technology                    |
+|-------------|-------------------------------|
+| Frontend     | React.js, Bootstrap, Axios    |
+| Backend      | Node.js, Express.js           |
+| Database     | MongoDB Atlas + Mongoose      |
+| Auth         | JWT, React Context            |
+| DevOps       | GitHub Actions, PM2, EC2      |
+| Project Mgmt | Jira, GitHub, Draw.io (SysML) |
 
-### **2. Project Management with JIRA and SysML**
+## 🚀 Getting Started
 
-* Create a **JIRA project** and define:
-  * **Epic**
-  * **User Stories** (features required in your app)
-  * **Child issues & Subtasks** (breaking down development work)
-  * **Sprint Planning** (organizing work into milestones)
-* Document your JIRA **board URL** in the project README.
-* Draw a requirements diagram
+### 🔑 Prerequisites
 
-### **3. Backend Development (Node.js + Express + MongoDB)**
+- Node.js (v16+)
+- MongoDB Atlas connection URI
+- Git
 
-* Create a user-friendly interface to interact with your API (Some portion developed, follow task manager app)).
-* Implement **forms** for adding and updating records.
-* Display data using  **tables, cards, or lists (Follow how we showed data in task manager app)**
+### 🔄 Installation
 
-### **4. Frontend Development (React.js)**
+```bash
+# Clone the repository
+git clone https://github.com/aniketkhot/car-rental-system
+cd car-rental-system
 
-* Create a user-friendly interface to interact with your API (**Some portion developed, follow task manager app)**.
-* Implement **forms** for adding, showing, deleting and updating records (CRUD).
-* Display data using  **tables, cards, or lists (Follow how we showed data in task manager app)**
+# Install backend dependencies
+cd backend
+npm install
 
-### **5. Authentication & Authorization**
+# Install frontend dependencies
+cd ../frontend
+npm install
+```
 
-* Ensure **only authenticated users** can access and perform CRUD operations. (Already developed in your project)
-* Use **JWT (JSON Web Tokens)** for user authentication (Use the task manager one from .env file).
+### 🔐 Setup Environment Variables
 
-### **6. GitHub Version Control & Branching Strategy**
+Create a `.env` file inside the `backend` folder:
 
-* Use **GitHub for version control** and maintain:
-  * `main` branch (stable production-ready code)
-  * Feature branches (`feature/xyz`) for each new functionality
-* Follow proper **commit messages** and  **pull request (PR) reviews** .
+```env
+MONGO_URI=your_mongo_connection_string
+JWT_SECRET=your_jwt_secret
+PORT=5001
+```
 
-### **7. CI/CD Pipeline Setup**
+### ▶️ Run the App (Dev Mode)
 
-* Implement a **CI/CD pipeline using GitHub Actions** to:
-  * Automatically **run tests** on every commit/pull request (Optional).
-  * Deploy the **backend** to **AWS** .
-  * Deploy the **frontend** to **AWS**.
-* Document your  **CI/CD workflow in the README** .
+```bash
+# From root directory
+npm run dev
+```
 
-## **Submission Requirements**
+This starts both frontend (http://localhost:3000) and backend (http://localhost:5001).
 
-* **JIRA Project Board URL** (user stories ).
-* **Requirment diagram** (Using project features)
-* **GitHub Repository** (`backend/` and `frontend/`).
-* **README.md** with:
+## 📦 Folder Structure
 
-  * Project setup instructions.
-  * CI/CD pipeline details.
+```
+car-rental-system/
+├── backend/
+│   ├── models/
+│   ├── controllers/
+│   ├── routes/
+│   └── server.js
+├── frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── context/
+│   │   ├── App.js
+│   │   └── index.js
+└── README.md
+```
+
+## ⚙️ Deployment (CI/CD)
+
+- GitHub Actions configured to run tests and deploy on push to `main`
+- EC2 Instance hosted on AWS
+- PM2 used for process management
+- YAML workflow handles build, test, and SSH-based deployment
+
+## 📌 Screenshots
+
+> Include screenshots of your UI, modals, and protected routes here for visual clarity (optional for submission)
+
+## 📘 Documentation
+
+- SysML Requirement Diagram (`/docs/sysml_requirement_diagram.drawio`)
+- Jira Board (link + screenshots)
+- CI/CD Workflow YAML file in `.github/workflows/`
+
+## 👨‍🎓 Developed For
+
+**QUT - IFN636 Software Life Cycle Management**  
+Semester 1, 2025
+
+## ✅ Author
+
+- [Aniket Khot](https://github.com/aniketkhot)
+
+## 📄 License
+
+This project is part of academic coursework and not licensed for commercial use.
